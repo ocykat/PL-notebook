@@ -1,4 +1,4 @@
-# N4L - Note for Languages
+# N4L - Notes for Languages
 
 
 ## C++
