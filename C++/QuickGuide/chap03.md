@@ -18,4 +18,5 @@ int main() {
 ```cpp
 #include <library-name>
 ```
-* In C++, namespaces are used to identify groups of names. Roughly speaking, everything defined in the C++ standard library belongs to the `std` namespace - for example, the `cout` object. If you do not have the line `using namespace std,`, then every time you use `cout`, you must type `std::cout` instead of `cout` only. You will get to know about namespace is in the chapter of Namespaces.
+* In C++, namespaces are used to identify groups of names. Roughly speaking, everything defined in the C++ standard library belongs to the `std` namespace - for example, the `cout` object. If you do not have the line `using namespace std;`, then every time you use `cout`, you must type `std::cout` instead of `cout` only. You will get to know about namespace is in the chapter of Namespaces.
+* The '\n' character is a special character that create a new line in the console. Besides '\n', there are other special characters having the same form: `\` + something. These characters are called **escape characters**.

@@ -26,7 +26,7 @@ cout << a << b << c;
 
 ## Reading Input
 
-In C++, to read input, we use the `cin` object, which also belongs to the <iostream> library, together with the `>>` operator.
+In C++, to read input, we use the `cin` object, which also belongs to the `<iostream>` library, together with the `>>` operator.
 
 ```cpp
 int a;
