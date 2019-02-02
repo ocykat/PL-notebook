@@ -10,6 +10,8 @@ Updated: Feb 02, 2019
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [0. Headnotes](#0-headnotes)
+	- [0.1. C++11](#01-c11)
+	- [0.2. Iterators](#02-iterators)
 - [1. `std::vector`](#1-stdvector)
 	- [1.1. Introduction](#11-introduction)
 	- [1.2. `include` directive](#12-include-directive)
@@ -91,7 +93,7 @@ g++ -std=c++11 -Wall -Wextra main.cpp -o main
 ```
 
 ### 0.2. Iterators
-An iterator are pointers pointing to a memory address of a container.
+An iterator is a pointing to a memory address of a container.
 The address can be:
 * the begin address of the container.
 * the end address of the container.
@@ -261,7 +263,7 @@ same value.
 
 * **Syntax**
 ```
-    fill(ptr_begin, ptr_end);
+    std::fill(ptr_begin, ptr_end);
 ```
 where `ptr_begin` is the pointer to the beginning of the container,
 `ptr_end` is the pointer to the end of the container.
@@ -274,10 +276,10 @@ where `ptr_begin` is the pointer to the beginning of the container,
     int x = 3;
 
     int a[n];
-    fill(a, a + n, x); // a = {3, 3, 3, 3, 3}
+    std::fill(a, a + n, x); // a = {3, 3, 3, 3, 3}
 
-    vector<int> v(n);
-    fill(v.begin(), v.end(), x); // v = {3, 3, 3, 3, 3}
+    std::vector<int> v(n);
+    std::fill(v.begin(), v.end(), x); // v = {3, 3, 3, 3, 3}
 ```
 
 ### 2.3. `std::sort`
@@ -287,13 +289,13 @@ where `ptr_begin` is the pointer to the beginning of the container,
 non-decreasing order.
 * **Syntax**
 ```cpp
-    fill(ptr_begin, ptr_end);
+    std::sort(ptr_begin, ptr_end);
 ```
 
 * **Example**
 ```cpp
-    sort(a, a + n);           // array a
-    sort(v.begin(), v.end()); // vector v
+    std::sort(a, a + n);           // array a
+    std::sort(v.begin(), v.end()); // vector v
 ```
 
 
@@ -316,9 +318,9 @@ int main() {
     int a[N];
     vector<int> v(N);
 
-    sort(a, a + n, greater<int>());
-    sort(v.begin(), v.end(), greater<int>());    
-    sort(v.rbegin(), v.rend());    
+    std::sort(a, a + n, greater<int>());
+    std::sort(v.begin(), v.end(), greater<int>());    
+    std::sort(v.rbegin(), v.rend());    
     return 0;
 }
 ```
