@@ -1,7 +1,9 @@
 # C++ Standard Template Library (C++ STL)
 ----------------
 
-Author: Nhat M. Nguyen - Date: May 31, 2018
+Author: Nhat M. Nguyen
+Created: May 31, 2018
+Updated: Feb 02, 2019
 
 ----------------
 # Contents
@@ -75,16 +77,30 @@ Author: Nhat M. Nguyen - Date: May 31, 2018
 
 ----------------
 ## 0. Headnotes
+
+### 0.1. C++11
 * If you want to use the STL features the way I mentioned in this note, please set
 your compiler option to at least C++11. The way to do it may vary according
 to your IDE. If you are using MS Visual Studio, the good news is
 the compiler option is always set to the latest version of C++ (currently it is C++17 I think).
-If you are using other IDEs, please Google how to do it.
-* I used the word *pointer* several times while the more correct
-terminology has to be *iterator*. However, the word *pointer* is more
-beginner-friendly.
+If you are using other IDEs, please Google how to do it. If you are compiling with the terminal,
+your compiling command should look like this:
+```
+g++ -std=c++11 -Wall -Wextra main.cpp -o main
+# you can replace c++11 with c++14 or c++17 if you want newer versions of C++
+```
+
+### 0.2. Iterators
+An iterator are pointers pointing to a memory address of a container.
+The address can be:
+* the begin address of the container.
+* the end address of the container.
+* the address of an element in the container.
+
+You will see how iterators are used in the following sections.
 
 ----------------
+
 ## 1. `std::vector`
 
 ### 1.1. Introduction
@@ -94,8 +110,8 @@ beginner-friendly.
 * Difference:
     * the size of the array must be known when it is declared and
     unchanged throughout the program.
-    * when a vector is declared, the specific size is not required;
-    it can be changed throughout the program.
+    * when a vector is declared, the specific size is not required, and
+    it can be changed throughout the lifetime of the program.
 
 
 ### 1.2. `include` directive
@@ -149,7 +165,11 @@ my previous instruction.*
 There is almost no difference between `push_back` and `emplace_back` when we add
 elements to a vector of primitive types (`int`, `double`, `char`, etc.).
 
-However, when it comes to vectors of objects, there are some differences.
+However, when it comes to vectors of objects, there are differences:
+* `push_back` creates an object, then copy/move it to the end of the vector,
+while `emplace_back` creates the object directly at the end of the vector.
+Therefore, `emplace_back` is faster.
+* Syntax:
 
 ```cpp
 class Student() {
@@ -174,14 +194,6 @@ int main() {
 }
 ```
 
-If you are not bothered with how the two are different on the inside, just use
-`emplace_back`.
-
-*`push_back` creates an object, then pass its reference to the end of the vector,
-while `emplace_back` creates the object directly at the end of the vector.
-Therefore, `emplace_back` is faster.*
-
-
 ### 1.5. Range-based loop
 Another great feature introduced with C++11 is range-based loops for
 `std::vector` and some other containers. Range-based loops make code much more
@@ -198,6 +210,36 @@ int main() {
     // The following loop does the same thing
     for (Student &student : students) {
         std::cout << student.name << "\n";
+    }
+}
+```
+
+Be careful when using range-based loop: you should know when you should get element by-reference and when you should get by-value.
+
+```cpp
+int main() {
+    std::vector<int> nums;
+
+    // This loop does NOT change the vector at all
+    for (int x : nums) {
+        x++;
+    }
+
+    // But this loop does
+    for (int& x : nums) {
+        x++;
+    }
+
+    std::vector<std::string> words;
+
+    // This loop is fast
+    for (std::string& word : word) {
+        // ...
+    }
+
+    // This loop is slow - think about WHY
+    for (std::string word : word) {
+        // ...
     }
 }
 ```
@@ -261,8 +303,8 @@ non-decreasing order.
 lambda functions. See next part for more information*.
 
 * To sort in reverse order, there are two ways:
-    * use `std::greater` from the header `std::functional`.
-    * use the `rbegin()` and `rend()` iterators instead of `begin()` and `end()`.
+  * use `std::greater` from the header `std::functional`.
+  * use the `rbegin()` and `rend()` iterators instead of `begin()` and `end()`.
 
 ```cpp
 #include <algorithm>  // std::sort
@@ -315,7 +357,7 @@ class Student {
 int main() {
     std::vector<Student> students;
 
-    ...
+    // ...
 
     std::sort(student.begin(), student.end()); // just use std::sort normally
                                                // like primitive types here
@@ -342,10 +384,19 @@ struct Student {
 int main() {
     std::vector<Student> students;
 
-    ...
+    // ...
 
-    std::sort(student.begin(), student.end(), [](Student student_1, Student student_2) {
+    std::sort(student.begin(), student.end(), [](Student& student_1, Student& student_2) {
         return student_1.gpa < student_2.gpa;
+    });
+
+
+    std::vector<int> nums;
+
+    // ...
+
+    std::sort(nums.begin(), nums.end(), [](int x, int y) {
+        return x > y; // sort in non-increasing order
     });
 
     return 0;
@@ -368,7 +419,7 @@ Return `true` if an element equals to `val` is found, and `false` otherwise.
 ```cpp
     std::lower_bound(ptr_begin, ptr_end, val);
 ```
-Returns a pointer pointing to the first element in the range
+Returns an iterator pointing to the first element in the range
 `[ptr_begin, ptr_end)` which is ![equation](http://latex.codecogs.com/gif.latex?%5Cleq) `val`.
 
 To get the position:
@@ -447,7 +498,7 @@ A `std::pair` object can be created using the function `std::make_pair`.
 
 #### 3.3.5. Sorting
 `std::sort` sorts an array or a vector of `std::pair` in non-decreasing order
-based on the first element.
+based on the **first** element.
 
 
 ----------------
@@ -514,9 +565,9 @@ The type of `pair` is `std::pair`. Usually, `insert` is used alongside
 ```cpp
     std::unordered_map<std::string, int> age_table;
 
-    age_table.emplace("Alan", 30);
-    age_table.emplace("John", 25);
-    age_table.emplace("Michael", 33);
+    age_table.insert(std::make_pair("Alan", 30));
+    age_table.insert(std::make_pair("John", 25));
+    age_table.emplace(std::make_pair("Michael", 33));
 ```
 
 
@@ -550,9 +601,6 @@ if the key does not exist.
         std::cout << "Key exists\n";
     }
 ```
-
-#### 4.1.7. Looping through all elements
-Using range-based loops is the most convenient way. The order of the elements is random.
 
 
 ### 4.2. `std::map`
@@ -595,6 +643,7 @@ non-decreasing order of the keys by default.
 * Each element in `std::set` is **unique**. If the same element is inserted multiple
 times, `std::set` only keeps one element.
 
+
 ### 5.2. `include` directive
 ```cpp
 #include <set>
@@ -605,12 +654,12 @@ times, `std::set` only keeps one element.
 * `emplace`
 * `erase`
 
-
 ----------------
 
 ## 6. Abstract Data Types
 ### 6.1. Queue
 #### 6.1.1. `include` directive
+
 ```cpp
 #include <queue>
 ```
