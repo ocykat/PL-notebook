@@ -1,9 +1,9 @@
 # C++ Standard Template Library (C++ STL)
 ----------------
 
-Author: Nhat M. Nguyen
-Created: May 31, 2018
-Updated: Feb 02, 2019
+* Author: Nhat M. Nguyen
+* Created: May 31, 2018
+* Updated: Feb 02, 2019
 
 ----------------
 # Contents
