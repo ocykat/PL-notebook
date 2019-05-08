@@ -75,14 +75,11 @@ Author: Nhat M. Nguyen - Date: May 31, 2018
 
 ----------------
 ## 0. Headnotes
-* If you want to use the STL features the way I mentioned in this note, please set
+* If you want to use the STL features the way I mention in this note, please set
 your compiler option to at least C++11. The way to do it may vary according
 to your IDE. If you are using MS Visual Studio, the good news is
 the compiler option is always set to the latest version of C++ (currently it is C++17 I think).
 If you are using other IDEs, please Google how to do it.
-* I used the word *pointer* several times while the more correct
-terminology has to be *iterator*. However, the word *pointer* is more
-beginner-friendly.
 
 ----------------
 ## 1. `std::vector`
