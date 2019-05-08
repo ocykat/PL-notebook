@@ -1,10 +1,10 @@
 # Chapter 02. Compilers and Tools
 
-# Compilers
+## Compilers
 
 This section mentions some of the most widely-used C++ compilers.
 
-## GCC
+### GCC
 
 GCC is one of the most common C++ compiler. It is an open source compiler which is installed by default on most Linux distro. GCC has different versions for different operating systems.
 
@@ -32,16 +32,16 @@ Also, you want to enable warnings to catch unwanted errors when running the prog
 g++ -std=c++17 -Wall -Wextra main.cpp -o main
 ```
 
-## Clang
+### Clang
 
 Clang is another common C++ compiler which belongs to the LLVM Open Source Project.
 
-## Visual C++
+### Visual C++
 
 Visual C++ comes with the Visual Studio IDE on Windows. This compiler is developed by Microsoft and targets the Windows OS only.
 
 
-# Tools
+## Tools
 
 To program in C++, basically there are only two things you need:
 * A compiler
@@ -58,7 +58,7 @@ However, text editors are not always great. You will need a good IDE if:
 * you need to debug a lot. A common scenario is when you need to implement some kind of data structure using pointers.
 
 
-## Text editors
+### Text editors
 
 Some good text editors are:
 
@@ -70,7 +70,7 @@ Some good text editors are:
 * Vim: has a learning-curve: using it is hard, and setting it up is even harder. You need a lot of time to get used to it, but once you are, you cannot live without it. I use Vim personally.
 
 
-## IDEs
+### IDEs
 
 1. CLion: best C++ IDE in my opinion: easy to use, easy to debug, super powerful and super smart. It is not free, unfortunately, but if you are a student, you can use it for free by registering for a student license. All you need is an email with the domain of your institution.
 2. Code::Blocks: nice IDE, but it has become quite obsolete nowadays. Not very smart. Debugging is not very well-supported.
