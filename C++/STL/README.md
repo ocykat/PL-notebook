@@ -106,7 +106,6 @@ The address can be:
 * the address of an element in the container.
 
 You will see how iterators are used in the following sections.
->>>>>>> e2a3cdeb5708af98bd8bb66f6c23e9b1c0486ff2
 
 ----------------
 
