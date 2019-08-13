@@ -83,11 +83,11 @@ After incrementing: a = 1, b = 1
 
 ## Logical Operators
 
-| Operator | Name/Meaning |
-| -------- | ------------ |
-| `&&`     | AND          |
-| <code>&#124;&#124;</code>     | OR           |
-| `!`      | NOT          |
+| Operator                  | Name/Meaning |
+| ------------------------- | ------------ |
+| `&&`                      | AND          |
+| <code>&#124;&#124;</code> | OR           |
+| `!`                       | NOT          |
 
 
 ## Conditional Operators
@@ -100,11 +100,11 @@ After incrementing: a = 1, b = 1
 
 ## Bitwise Operators
 
-| Operator | Name/Meaning                                         |
-| -------- | ---------------------------------------------------- |
-| `a & b`  | Bitwise AND                                          |
-| `a | b`  | Bitwise OR                                           |
-| `a ^ b`  | Bitwise XOR                                          |
-| `~ a`    | Bitwise NOT                                          |
-| `a << b` | Left shift: `a` is shifted by `b` bits to the left   |
-| `a >> b` | Right shift: `a` is shifted by `b` bits to the right |
+| Operator                | Name/Meaning                                         |
+| ----------------------- | ---------------------------------------------------- |
+| `a & b`                 | Bitwise AND                                          |
+| <code>a &#124; b</code> | Bitwise OR                                           |
+| `a ^ b`                 | Bitwise XOR                                          |
+| `~ a`                   | Bitwise NOT                                          |
+| `a << b`                | Left shift: `a` is shifted by `b` bits to the left   |
+| `a >> b`                | Right shift: `a` is shifted by `b` bits to the right |
