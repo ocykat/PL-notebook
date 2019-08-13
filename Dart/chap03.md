@@ -86,7 +86,7 @@ After incrementing: a = 1, b = 1
 | Operator | Name/Meaning |
 | -------- | ------------ |
 | `&&`     | AND          |
-| `||`     | OR           |
+| <code>&#124;&#124;</code>     | OR           |
 | `!`      | NOT          |
 
 
