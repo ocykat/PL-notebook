@@ -237,9 +237,9 @@ From this example, since you are quite familiar with Makefile already, I will on
 ```makefile
 CC=gcc
 CFLAGS=-Wall -Wextra
-EXEC=main
 SRCS=$(wildcard *.c) $(wildcard */*.c)
-OJBS=$(patsubst %.c,%.o,$(SRCS))
+OBJS=$(patsubst %.c,%.o,$(SRCS))
+EXEC=main
 
 all: $(EXEC)
 
@@ -252,4 +252,12 @@ $(OBJS): $(SRCS)
 clean:
     rm *.o
     rm main
+
+print:
+    echo $(SRCS)
 ```
+
+
+### Example 9: Using Makefile recursively
+
+* [link](https://www.gnu.org/software/make/manual/make.html#Recursion)
