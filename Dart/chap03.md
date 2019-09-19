@@ -25,15 +25,15 @@ There are 7 types of operators:
 
 ```dart
 void main() {
-    print(" 5  /  4 = ${5 / 4}");
-    print(" 5 ~/  4 = ${5 ~/ 4}");
-    print("-5  %  4 = ${-5 % 4}");
+  print(" 5  /  4 = ${5 / 4}");
+  print(" 5 ~/  4 = ${5 ~/ 4}");
+  print("-5  %  4 = ${-5 % 4}");
 
-    int a = 0;
-    int b = 0;
-    print("Pre-increment a   : a = ${++a}");
-    print("Post-increment b  : b = ${b++}");
-    print("After incrementing: a = ${a}, b = ${b}");
+  int a = 0;
+  int b = 0;
+  print("Pre-increment a   : a = ${++a}");
+  print("Post-increment b  : b = ${b++}");
+  print("After incrementing: a = ${a}, b = ${b}");
 }
 
 /*
@@ -73,7 +73,7 @@ After incrementing: a = 1, b = 1
 | `a != b` | Not equal                |
 
 
-# Type-Test Operator
+## Type-Test Operator
 
 | Operator  | Name/Meaning                                                  |
 | --------- | ------------------------------------------------------------- |
