@@ -10,7 +10,7 @@ Each execution context is associated with an **Execution Context Object**. For e
 
 ```js
 var a;
-a = window.a; // true
+a === window.a; // true
 ```
 
 Each **function call** has its own execution context.
