@@ -51,3 +51,70 @@ The last 2 steps are called **hoisting**. Hoisting always happens **before** cod
 Difference between function hoisting and variable hoisting:
 * Functions are already defined before the execution phase starts.
 * Variables are set to `undefined` before the execution phase starts. Variables can only become defined in the execution phase.
+
+Examples:
+
+* Example 1
+
+```js
+foo1(a); // this works
+foo2(a); // error
+
+function foo1(a) {
+    console.log("foo1: a = " + a);
+}
+
+var foo2 = function(a) {
+    console.log("foo2: a = " + a);
+}
+```
+
+* Example 2:
+
+```js
+console.log(a); // undefined
+var a = 10; // this `a` is attached to the VO of the Global Execution Context
+console.log(a); // 10
+
+function foo() {
+    console.log(a); // undefined
+    var a = 20; // this `a` is attached to the VO of the Execution Context of `foo()`
+    console.log(a); // 20
+}
+```
+
+### Scoping
+
+* Scoping answers the question: Where can we access a certain variable?
+* Each new function creates a scope.
+* Lexical scoping: a function that is lexically within another function gets access to the scope of the outer function.
+
+```js
+var a = "Here";
+first();
+
+function first() {
+    var b = "There";
+    second();
+
+    function second() {
+        var c = "Everywhere";
+        console.log(a + b + c);
+    }
+}
+```
+
+### The `this` variable
+
+* For a **Regular Function Call**: the `this` keyword points at the global object (the `window` object in the browser)
+* For a **Method Call**: the `this` variable points to the object that is calling the method.
+
+*Note*: The `this` keyword is not assigned a value until a function where it is defined is actually called.
+
+```js
+function foo() {
+    console.log(this);
+}
+
+foo(); // this === window
+```
