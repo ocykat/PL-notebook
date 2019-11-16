@@ -1,0 +1,15 @@
+#+TITLE: Chapter 8: Objects and Functions
+
+** Objects
+*** Objects vs Primitives
+In JavaScripts, primitives include:
+- Numbers
+- Strings
+- Booleans
+- Undefined
+- Null
+Everything else are objects, namely:
+- Arrays
+- *Functions*
+- Dates
+- Wrappers for primitives

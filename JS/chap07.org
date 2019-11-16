@@ -1,0 +1,47 @@
+#+TITLE: Chapter 7: DOM and DOM Manipulation
+
+** DOM
+- DOM stands for Document Object Model, which is a structured representation of an HTML document that can be connected by JS code.
+- For each pair of HTML tags, or single HTML tag, there is an object in the DOM that JS can interact with.
+
+** HTML-walk-through
+- A class attribute can be used multiple times, while an id attribute can only be used once.
+
+** The =document= object
+- To access the DOM, use the =document= object.
+*** Properties and Methods
+- =document.querySelector('#id').textContent=: the plain text contain of an HTML element having the id ='id'=.
+- =document.getElementByID('id').textContent=: the plain text contain of an HTML element having the id ='id'=.
+- =document.querySelector('.classname').textContent=: the plain text contain of an HTML element having the class ='classname'=.
+- =document.querySelector('#id').innerHTML=: the inner HTML contain of an HTML element having the id ='id'=.
+- =document.querySelector('#id').style.display=: the CSS attribute =display= of an HTML element having the id ="id"=.
+- =document.querySelector('#id').classList=: list of classes of an HTML element
+- =document.querySelector('#id').classList.remove('classname')=: remove the class ='classname'= from the HTML element having the id ='id'=.This function can be called even if the element does not have the class ='classname'=.
+- =document.querySelector('#id').classList.add('classname')=: add the class ='classname'= to the HTML element having the id ='id'=.
+- =document.querySelector('#id').classList.toggle('classname')=: add the class ='classname'= to the HTML element having the id ='id'= if this element does not have the class ='classname'= yet, or remove the class ='classname'= from the HTML element having the id ='id'= if this element has the class ='classname'=.
+
+** Events and Event Listeners
+*** Definition of Events and Event Listeners
+- *Event* is a notification that is sent to notitfy the code that something happened on the webpage. Examples: clicking a button, resizing a window, scrolling down, pressing a key.
+- An *Event Listener* is a function that performs an action based on a certain event. It waits for a specific event to happen.
+
+*** How events are processed
+- When an event happens, it is put inside a message queue.
+- The first event at the front of the queue is processed once the Execution Stack is empty.
+- When an event is processed, the Execution Context of the corresponding event listener is put into the Execution Stack.
+
+*** Event Handling in JavaScript
+- For list of event names, visit [[https://developer.mozilla.org/en-US/docs/Web/Events][this site]].
+- To handle the event "the button with =class=btn=  is clicked" with the function =btnClicked=:
+#+BEGIN_SRC js
+function btnClicked {
+    // Do something
+}
+document.querySelector.('.btn').addEventListener('click', btnClicked);
+#+END_SRC
+- Anonymous function can also be used if it is not used anywhere else.
+#+BEGIN_SRC js
+document.querySelector.('.btn').addEventListener('click', function() {
+    // Do something
+});
+#+END_SRC

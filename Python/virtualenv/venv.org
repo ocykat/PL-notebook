@@ -1,0 +1,18 @@
+#+TITLE: Python Virtual Environment - The Right Way
+
+Most Python beginners would learn how to use =virtualenv= and stick to it (I did myself). However, in the newer versions of Python, it is recommended to use =venv= instead. Especially, if you are using Debian-based Linux distros such as Ubuntu, since version 18.04, =virtualenv= cannot be installed so easily.
+
+To install =venv=:
+
+#+BEGIN_SRC
+sudo apt install python3-venv
+#+END_SRC
+
+To use =venv=:
+#+BEGIN_SRC sh
+python3 -m venv <project-name>
+# activate
+source <project-name>/bin/activate
+# deactivate
+deactivate
+#+END_SRC

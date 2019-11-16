@@ -1,7 +1,7 @@
 # Chapter 1: Basics of Dart: The Hello World Program & Printing
 
 
-## The Hello World Program
+## The Hello World Program [*]
 ```dart
 void main() {
     print('Hello World');
@@ -11,14 +11,14 @@ void main() {
 A Dart program starts by entering the `void main()` function. (quite similar to many other languages)
 
 
-## Printing
+## Printing [*]
 * The `print()` function always automatically add a new line character.
 * The `print()` function can be used with:
   * A variable: the value of of that variable is printed. The variable can be an `int`, a `double`, a `String`, or a `List`, etc.
   * A literal
 
 
-## String Interpolation
+## String Interpolation [*]
 
 **String interpolation**: replace a variable (or an operation) inside a string with the value of that variable/operation.
 * Note: always use curly braces just to be safe!

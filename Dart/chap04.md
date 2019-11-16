@@ -1,6 +1,6 @@
 # Chapter 4: Conditional Statements
 
-## `if` statement
+## `if` statement [*]
 
 ```dart
 if (<condition>) {
@@ -21,7 +21,7 @@ else {
 ```
 
 
-## `switch-case` statement
+## `switch-case` statement [*]
 
 ```dart
 switch(grade) { 

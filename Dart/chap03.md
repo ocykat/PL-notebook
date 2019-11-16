@@ -9,7 +9,7 @@ There are 7 types of operators:
 * Condidtional
 * Bitwise
 
-## Arithmetic Operators
+## Arithmetic Operators [*]
 
 | Operator        | Name/Meaning                                 |
 | --------------- | -------------------------------------------- |
@@ -48,7 +48,7 @@ After incrementing: a = 1, b = 1
 ```
 
 
-## Assignment Operators
+## Assignment Operators [*]
 
 | Operator  | Name/Meaning                                              |
 | --------- | --------------------------------------------------------- |
@@ -61,7 +61,7 @@ After incrementing: a = 1, b = 1
 | `a ??= b` | Assign the value of `b` to `a` **only if `a` is null**    |
 
 
-## Relational Operators
+## Relational Operators [*]
 
 | Operator | Name/Meaning             |
 | -------- | ------------------------ |
@@ -73,7 +73,7 @@ After incrementing: a = 1, b = 1
 | `a != b` | Not equal                |
 
 
-## Type-Test Operator
+## Type-Test Operator [*]
 
 | Operator  | Name/Meaning                                                  |
 | --------- | ------------------------------------------------------------- |
@@ -81,7 +81,7 @@ After incrementing: a = 1, b = 1
 | `a is! X` | is not: returns `false` if `a` is of type X, `true` otherwise |
 
 
-## Logical Operators
+## Logical Operators [*]
 
 | Operator                  | Name/Meaning |
 | ------------------------- | ------------ |
@@ -90,7 +90,7 @@ After incrementing: a = 1, b = 1
 | `!`                       | NOT          |
 
 
-## Conditional Operators
+## Conditional Operators [**]
 
 | Operator           | Name/Meaning                                         |
 | ------------------ | ---------------------------------------------------- |
@@ -98,7 +98,7 @@ After incrementing: a = 1, b = 1
 | `a = x ?? y`       | if `x` is not `null`, returns `x`; else, returns `y` |
 
 
-## Bitwise Operators
+## Bitwise Operators [**]
 
 | Operator                | Name/Meaning                                         |
 | ----------------------- | ---------------------------------------------------- |

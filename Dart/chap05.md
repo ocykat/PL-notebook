@@ -1,6 +1,6 @@
 # Chapter 5: Loops
 
-## `for` loop
+## `for` loop [*]
 
 ```dart
 void main() {
@@ -17,7 +17,8 @@ void main() {
 */
 ```
 
-## `while` loop
+
+## `while` loop [*]
 
 ```dart
 void main() {
@@ -31,7 +32,8 @@ void main() {
 }
 ```
 
-## `do-while` loop
+
+## `do-while` loop [*]
 
 ```dart
 void main() {
@@ -43,6 +45,38 @@ void main() {
 }
 ```
 
-## Loop Control Statements
+
+## Loop Control Statements [*]
 
 Dart also offers the `break` and `continue` statements like a lot of other languages.
+
+
+## Labels [**]
+
+Label can be used to control the flow of a nested loop.
+
+```dart
+void main() {
+  outerloop: for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+      print("i = ${i}, j = ${j}");
+      if (i == j) {
+        continue outerloop;
+      }
+    }
+  }
+}
+/**
+======= OUTPUT =======
+i = 0, j = 0
+i = 1, j = 0
+i = 1, j = 1
+i = 2, j = 0
+i = 2, j = 1
+i = 2, j = 2
+i = 3, j = 0
+i = 3, j = 1
+i = 3, j = 2
+i = 3, j = 3
+*/
+```
